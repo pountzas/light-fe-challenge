@@ -1,12 +1,18 @@
 import Image from 'next/image'
 import { useState } from 'react'
+
 import NoLogo from './NoLogo'
+import InvoiceModal from './InvoiceModal'
+
+// icons
 import Verified from '../public/assets/svg/icons/verified'
 import Check from '../public/assets/svg/icons/check'
 import CheckReverted from '../public/assets/svg/icons/checkReverted'
 import Bell from '../public/assets/svg/icons/bell'
 import Reassign from '../public/assets/svg/icons/reassign'
-import InvoiceModal from './InvoiceModal'
+
+// images
+import person from '../public/assets/png/approvers/person.png'
 
 function InvoiceListItem({ invoice }) {
   const [modalState, setModalState] = useState(false);
@@ -20,15 +26,12 @@ function InvoiceListItem({ invoice }) {
             <div className='flex items-center gap-[6px] rounded-full text-gray-500 bg-gray-100 py-[2px] px-2 '>
               <Check />
               {status}
-
               {issues > 0 ?
                 <>
                   <div className='h-[3px] w-[3px] rounded-full bg-gray-500'></div>
-
                   {issues} issues
                 </> : null
               }
-
             </div>
           </div>
         )
@@ -37,10 +40,8 @@ function InvoiceListItem({ invoice }) {
           <div className='flex items-center space-x-1'>
             <div className='flex items-center gap-1 rounded-full bg-orange-50  py-[2px] px-2 text-orange-600'>
               {status}
-
-
-
             </div>
+
             <div className='flex items-center gap-1 rounded-full  py-[2px] px-2 text-gray-500 border border-gray-200'>
               <CheckReverted />
               {issues ?
@@ -48,8 +49,8 @@ function InvoiceListItem({ invoice }) {
                   {issues}
                 </> : null
               }
-
             </div>
+
           </div>
         )
       default:
@@ -106,7 +107,7 @@ function InvoiceListItem({ invoice }) {
           <div className='flex items-center justify-between'>
             <div className='flex items-center space-x-2'>
               <div className='w-6 h-6 bg-gray-200 rounded-full'>
-                <Image width={24} height={24} alt={approver} src='/png/approvers/Ellipse1' />
+                <Image width={24} height={24} alt={approver} src={person} />
               </div>
               <h6 className='text-gray-800 text-sm font-medium'>{approver}</h6>
             </div>
@@ -121,7 +122,7 @@ function InvoiceListItem({ invoice }) {
       case 'Oracle':
         return () => {
           setModalState(true);
-          setModalContent(<InvoiceModal open={modalState} onClose={() => setModalState(false)} />);
+          <InvoiceModal open={modalState} onClose={() => setModalState(false)} />
         }
       default:
         null
