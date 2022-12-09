@@ -17,7 +17,24 @@ export default function Home() {
           <button className='font-normal text-sm border-gray-400 border rounded py-[6px] px-3'>New Invoice</button>
         </div>
 
-      <footer className="">
+        <div className='min-w-full flex items-end gap-5 pt-6 border-gray-100 border-b'>
+          {/* invoices tabs */}
+          {tabs.map((tab, index) => (
+            <div key={index} className='flex items-center justify-between'>
+              <div className='flex items-center relative'>
+                <h4 className={`relative font-medium text-sm px-2 ${tab.selected ? 'border border-b-gray-900' : 'text-gray-500'}`}>{tab.name}
+                  {tab.count > 0 &&
+                    <span className='absolute ml-[2px] mb-2 text-xs text-gray-400'>{tab.count}</span>
+                  }
+                  {tab.status &&
+                    <span className='absolute mt-1 ml-[2px] h-1 w-1 rounded-full bg-sky-600'></span>
+                  }
+                </h4>
+              </div>
+
+            </div>
+          ))}
+        </div>
 
       </main>
     </div>
