@@ -1,0 +1,10 @@
+function CheckReverted() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="8" cy="9" r="7" fill="#D97706" />
+      <path d="M6 8.5L7.33333 10L10 7" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+}
+
+export default CheckReverted
