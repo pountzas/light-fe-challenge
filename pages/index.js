@@ -10,20 +10,16 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="w-full">
-        <div className='bg-black min-h-screen min-w-full'>
-          <h1 className='text-gray-700'>asd</h1>
-          <h2>asdasd</h2>
-          <div className='flex space-x-1'>
-            <div>asdasd</div>
-            <div>asdasdasd</div>
-          </div>
+      <main className="px-6 pt-10">
+        {/* invoices header */}
+        <div className='flex items-center justify-between '>
+          <h3 className='font-medium text-2xl'>Invoices</h3>
+          <button className='font-normal text-sm border-gray-400 border rounded py-[6px] px-3'>New Invoice</button>
         </div>
-      </main>
 
       <footer className="">
 
-      </footer>
+      </main>
     </div>
   )
 }
