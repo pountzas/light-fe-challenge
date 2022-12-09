@@ -36,6 +36,26 @@ export default function Home() {
           ))}
         </div>
 
+        <div className='flex items-center justify-between pt-4'>
+          {/* search bar */}
+          <div className='flex items-center space-x-4'>
+            <div className='py-[10px] px-4 rounded w-[402px] h-10 bg-gray-200'>
+              <div className='flex items-center justify-between'>
+                <div className='flex items-center'>
+                  <div className=''>
+                    <Search stroke='#A8A29E' />
+                  </div>
+                  <input className='bg-transparent text-sm font-normal text-white w-full h-full pl-4' placeholder='Search...' />
+                </div>
+              </div>
+            </div>
+            <button className='flex items-center gap-2'>
+              <Plus />
+              <h6 className='font-medium text-sm'>Add filter</h6>
+            </button>
+          </div>
+          <Gear />
+        </div>
       </main>
     </div>
   )
