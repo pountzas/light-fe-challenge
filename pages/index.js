@@ -56,6 +56,25 @@ export default function Home() {
           </div>
           <Gear />
         </div>
+
+
+        {/* invoices table */}
+        <div className='mt-6 border-gray-200 border rounded-[4px] text-xs font-medium whitespace-nowrap'>
+          <div className='flex items-center'>
+            <input type='checkbox' className='w-5 h-5 border bg-gray-400 mr-4 ml-2 my-2' />
+            <h6 className='w-[304px]'>Vendor</h6>
+            <h6 className='w-[472px]'>Description</h6>
+            <h6 className='w-[216px]'>Status</h6>
+            <h6 className='w-[128px]'>Time in stage</h6>
+            <h6 className='w-[348px]'>Approver</h6>
+            <h6 className='w-[152px]'>Paym. date</h6>
+            <h6 className='w-[96px]'>To be paid</h6>
+          </div>
+          {/* map invoices */}
+          {Invoices.map((invoice, index) => (
+            <InvoiceListItem key={index} invoice={invoice} />
+          ))}
+        </div>
       </main>
     </div>
   )
