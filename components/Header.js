@@ -12,7 +12,7 @@ function Header() {
   ]
 
   return (
-    <nav className='sticky top-0 h-[52px] w-full bg-gray-800 text-white flex items-center justify-between' >
+    <nav className='sticky z-10 top-0 h-[52px] w-full bg-gray-800 text-white flex items-center justify-between' >
       <section className='flex items-center justify-between'>
         {/* Left section */}
         <div className=''>
@@ -53,14 +53,14 @@ function Header() {
             <div className='flex items-center justify-between'>
               <div className='flex items-center'>
                 <div className='opacity-50'>
-                  <Search />
+                  <Search stroke='#FAFAF9' />
                 </div>
                 <input className='bg-transparent text-sm font-normal text-white w-full h-full pl-4' placeholder='Ask Ray...' />
               </div>
               <h5 className='text-xs font-medium opacity-50 text-gray-50'>CMD+K</h5>
             </div>
           </div>
-          <div className='flex items-center space-x-10 pl-5'>
+          <div className='flex items-center space-x-10 pl-5 font-medium text-sm '>
             <Link href='/'>
               Logs
             </Link>
