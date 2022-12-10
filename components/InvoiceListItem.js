@@ -118,11 +118,12 @@ function InvoiceListItem({ invoice }) {
   };
 
   const setInvoiceModal = (vendor) => {
+    console.log(vendor);
     switch (vendor) {
       case 'Oracle':
         return () => {
           setModalState(true);
-          <InvoiceModal open={modalState} onClose={() => setModalState(false)} />
+
         }
       default:
         null
@@ -160,6 +161,8 @@ function InvoiceListItem({ invoice }) {
       <div className='w-[348px]'>{getApprover(invoice.approver, invoice.approverAction)}</div>
       <div className='w-[152px]'>{invoice.paymentDate}</div>
       <div className='w-[96px]'>{invoice.toBePaid}</div>
+
+      <InvoiceModal open={modalState} onClose={() => setModalState(false)} />
     </div>
   )
 }
