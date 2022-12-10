@@ -48,18 +48,18 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="px-6 pt-10">
+      <main className="relative px-6 pt-10 ">
         {/* invoices header */}
         <div className='flex items-center justify-between '>
-          <h3 className='font-medium text-2xl'>Invoices</h3>
+          <h3 className='text-2xl font-medium'>Invoices</h3>
           <button className='font-normal text-sm border-gray-400 border rounded py-[6px] px-3'>New Invoice</button>
         </div>
 
-        <div className='min-w-full flex items-end gap-5 pt-6 border-gray-100 border-b'>
+        <div className='flex items-end min-w-full gap-5 pt-6 border-b border-gray-100'>
           {/* invoices tabs */}
           {tabs.map((tab, index) => (
             <div key={index} className='flex items-center justify-between'>
-              <div className='flex items-center relative'>
+              <div className='relative flex items-center'>
                 <h4 className={`relative font-medium text-sm px-2 ${tab.selected ? 'border border-b-gray-900' : 'text-gray-500'}`}>{tab.name}
                   {tab.count > 0 &&
                     <span className='absolute ml-[2px] mb-2 text-xs text-gray-400'>{tab.count}</span>
@@ -83,13 +83,13 @@ export default function Home() {
                   <div className=''>
                     <Search stroke='#A8A29E' />
                   </div>
-                  <input className='bg-transparent text-sm font-normal text-white w-full h-full pl-4' placeholder='Search...' />
+                  <input className='w-full h-full pl-4 text-sm font-normal text-white bg-transparent' placeholder='Search...' />
                 </div>
               </div>
             </div>
             <button className='flex items-center gap-2'>
               <Plus />
-              <h6 className='font-medium text-sm'>Add filter</h6>
+              <h6 className='text-sm font-medium'>Add filter</h6>
             </button>
           </div>
           <Gear />
@@ -99,7 +99,7 @@ export default function Home() {
         {/* invoices table */}
         <div className='mt-6 border-gray-200 border rounded-[4px] text-xs font-medium whitespace-nowrap'>
           <div className='flex items-center'>
-            <input type='checkbox' className='w-5 h-5 border bg-gray-400 mr-4 ml-2 my-2' />
+            <input type='checkbox' className='w-5 h-5 my-2 ml-2 mr-4 bg-gray-400 border' />
             <h6 className='w-[304px]'>Vendor</h6>
             <h6 className='w-[472px]'>Description</h6>
             <h6 className='w-[216px]'>Status</h6>
@@ -118,8 +118,8 @@ export default function Home() {
           <div className='flex items-center space-x-2'>
             <Envelope />
             <div>
-              <h6 className='font-medium text-xs'>Send or forward invoices to</h6>
-              <h6 className='font-medium text-xs text-orange-600'>company@inbox.light.inc</h6>
+              <h6 className='text-xs font-medium'>Send or forward invoices to</h6>
+              <h6 className='text-xs font-medium text-orange-600'>company@inbox.light.inc</h6>
 
             </div>
           </div>
@@ -129,7 +129,7 @@ export default function Home() {
             <div className='w-8 h-8'>
             </div>
             <div className='flex items-center'>
-              <div className='h-8 w-8 flex items-center justify-center'>
+              <div className='flex items-center justify-center w-8 h-8'>
                 <ChevronDown stroke={'black'} />
               </div>
               <h6 className='font-medium text-xs w-8 h-8 bg-sky-100 text-sky-600 text-center p-[6px] rounded-[4px]'>1</h6>
@@ -139,12 +139,12 @@ export default function Home() {
               <h6 className='font-medium text-xs w-8 h-8 bg-white text-gray-500 text-center p-[6px] rounded-[4px]'>...</h6>
               <h6 className='font-medium text-xs w-8 h-8 bg-white text-gray-500 text-center p-[6px] rounded-[4px]'>13</h6>
 
-              <div className='h-8 w-8 flex items-center justify-center'>
+              <div className='flex items-center justify-center w-8 h-8'>
                 <ChevronDown stroke={'black'} />
               </div>
 
               <button className='flex items-center justify-center border border-gray-200 rounded-[4px] text-sm font-normal text-gray-700 w-[115px] h-[40px]'>50 / page
-                <div className='h-8 w-8 flex items-center justify-center'>
+                <div className='flex items-center justify-center w-8 h-8'>
                   <ChevronDown stroke={'black'} />
                 </div>
               </button>
