@@ -39,7 +39,6 @@ export default function Home() {
     }
   ]
 
-
   return (
     <div className="min-h-screen bg-white">
       <Head>
@@ -95,10 +94,9 @@ export default function Home() {
           <Gear />
         </div>
 
-
         {/* invoices table */}
-        <div className='mt-6 border-gray-200 border rounded-[4px] text-xs font-medium whitespace-nowrap'>
-          <div className='flex items-center'>
+        <div className='mt-4 border-gray-200 border rounded-[4px] text-xs font-medium whitespace-nowrap'>
+          <div className='flex items-center cursor-pointer'>
             <input type='checkbox' className='w-5 h-5 my-2 ml-2 mr-4 bg-gray-400 border' />
             <h6 className='w-[304px]'>Vendor</h6>
             <h6 className='w-[472px]'>Description</h6>
@@ -120,7 +118,6 @@ export default function Home() {
             <div>
               <h6 className='text-xs font-medium'>Send or forward invoices to</h6>
               <h6 className='text-xs font-medium text-orange-600'>company@inbox.light.inc</h6>
-
             </div>
           </div>
 
@@ -148,9 +145,6 @@ export default function Home() {
                   <ChevronDown stroke={'black'} />
                 </div>
               </button>
-            </div>
-            <div>
-
             </div>
           </div>
         </div>

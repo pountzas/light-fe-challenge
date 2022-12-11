@@ -16,7 +16,6 @@ import person from '../public/assets/png/approvers/person.png'
 
 function InvoiceListItem({ invoice }) {
   const [modalState, setModalState] = useState(false);
-  const [modalContent, setModalContent] = useState(null);
 
   const getStatus = (status, issues) => {
     switch (status) {
@@ -99,7 +98,7 @@ function InvoiceListItem({ invoice }) {
         return (
           <div className='flex items-center space-x-2'>
             <div className='w-6 h-6 bg-gray-200 rounded-full'></div>
-            <h6 className='text-gray-400 text-sm font-medium'>{approver}</h6>
+            <h6 className='text-sm font-medium text-gray-400'>{approver}</h6>
           </div>
         )
       default:
@@ -109,7 +108,7 @@ function InvoiceListItem({ invoice }) {
               <div className='w-6 h-6 bg-gray-200 rounded-full'>
                 <Image width={24} height={24} alt={approver} src={person} />
               </div>
-              <h6 className='text-gray-800 text-sm font-medium'>{approver}</h6>
+              <h6 className='text-sm font-medium text-gray-800'>{approver}</h6>
             </div>
             <div className='pr-8'>{getReminder(reminder)}</div>
           </div>
@@ -123,7 +122,6 @@ function InvoiceListItem({ invoice }) {
       case 'Oracle':
         return () => {
           setModalState(true);
-
         }
       default:
         null
@@ -132,7 +130,7 @@ function InvoiceListItem({ invoice }) {
 
   return (
     <div className='flex items-center text-gray-800 border-t'>
-      <input type='checkbox' className='w-5 h-5 border-b bg-gray-400 mr-4 ml-2 my-4' />
+      <input type='checkbox' className='w-5 h-5 my-4 ml-2 mr-4 bg-gray-400 border-b' />
       <div className='w-[304px] flex items-center space-x-2' onClick={setInvoiceModal(invoice.vendor)}>
         <div>
           {
@@ -142,8 +140,8 @@ function InvoiceListItem({ invoice }) {
         <div>
           {
             invoice.vendor === 'Missing' ?
-              <h6 className='text-gray-400'>{invoice.vendor}</h6> :
-              <h6>{invoice.vendor}</h6>
+              <h6 className='text-gray-400 cursor-pointer'>{invoice.vendor}</h6> :
+              <h6 className='cursor-pointer '>{invoice.vendor}</h6>
           }
         </div>
         <div>

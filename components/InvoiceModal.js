@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import Image from 'next/image'
 
 import Close from '../public/assets/svg/icons/close'
@@ -15,7 +15,6 @@ import VendorLg from '../public/assets/svg/icons/vendorLg'
 import Vendor from '../public/assets/svg/icons/vendor'
 
 function InvoiceModal({ open, onClose }) {
-  const [isMounted, setIsMounted] = useState(false);
 
   const escKeyDown = (e) => {
     if (e.keyCode === 27 || e.key === "Escape") {
@@ -24,10 +23,8 @@ function InvoiceModal({ open, onClose }) {
   }
 
   useEffect(() => {
-    setIsMounted(true);
     document.addEventListener("keydown", escKeyDown);
     return () => {
-      setIsMounted(false);
       document.removeEventListener("keydown", escKeyDown);
     }
   }, []);
@@ -95,9 +92,7 @@ function InvoiceModal({ open, onClose }) {
                     </div>
                   </div>
                   <ChevronDown stroke='black' />
-
                 </div>
-
 
               </div>
 
@@ -136,7 +131,6 @@ function InvoiceModal({ open, onClose }) {
                   <div className='space-y-1'>
                     <h6 className='text-xs font-medium text-gray-500'>Send to account</h6>
                     <div className='flex items-center space-x-2'>
-
                       <div className='rounded-full h-[32px] w-[32px] bg-gray-200 flex items-center justify-center'>
                         <Vendor stroke='#78716C' />
                       </div>
@@ -147,7 +141,6 @@ function InvoiceModal({ open, onClose }) {
                     </div>
                   </div>
                   <ChevronDown stroke='#78716C' />
-
                 </div>
 
                 <h4 className='col-span-4 pt-2 pb-8 text-base font-medium text-gray-800 h-[28px]'>Accounting details</h4>
@@ -215,7 +208,6 @@ function InvoiceModal({ open, onClose }) {
               <div className=''>
                 <h4 className='pt-6 text-base  font-bold text-gray-800 h-[28px]'>Line items</h4>
                 <div className='grid grid-cols-4 mt-8 border-t border-gray-200 rounded-t border-x'>
-
                   <div className='col-span-3 p-4 bg-white border-r border-gray-200 h-[52px] flex items-center justify-between'>
                     <div className=''>
                       <h6 className='text-sm font-normal text-gray-700'>MacBook Pro 16/2.8/Tim</h6>

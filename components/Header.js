@@ -1,14 +1,13 @@
 import Link from 'next/link'
-import React from 'react'
 import ChevronDown from '../public/assets/svg/icons/chevronDown'
 import Search from '../public/assets/svg/icons/search'
 
 function Header() {
   const pages = [
     { name: 'Home', href: '/' },
-    { name: 'Invoices', href: '/invoices', count: 32 },
-    { name: 'Vendors', href: '/vendors' },
-    { name: 'Insights', href: '/insights' },
+    { name: 'Invoices', href: '/', count: 32 },
+    { name: 'Vendors', href: '/' },
+    { name: 'Insights', href: '/' },
   ]
 
   return (
@@ -17,18 +16,17 @@ function Header() {
         {/* Left section */}
         <div className=''>
           {/* logo section */}
-          <div className='py-2 pl-6 pr-4 flex items-center border-r border-gray-700 h-9'>
+          <div className='flex items-center py-2 pl-6 pr-4 border-r border-gray-700 h-9'>
             <div className='h-9 w-9 rounded-[4px] bg-white opacity-20'></div>
             <Link href='/'>
-              <div className='flex items-center space-x-4 pl-6'>
-                <h1 className='font-medium text-lg whitespace-nowrap'>Acme Inc</h1>
-                {/* arrow down */}
+              <div className='flex items-center pl-6 space-x-4'>
+                <h1 className='text-lg font-medium whitespace-nowrap'>Acme Inc</h1>
                 <ChevronDown />
               </div>
             </Link>
           </div>
         </div>
-        <div className='font-medium text-sm items-center pl-5'>
+        <div className='items-center pl-5 text-sm font-medium'>
           {/* nav section */}
           {pages.map((page, index) =>
             <Link
@@ -55,12 +53,12 @@ function Header() {
                 <div className='opacity-50'>
                   <Search stroke='#FAFAF9' />
                 </div>
-                <input className='bg-transparent text-sm font-normal text-white w-full h-full pl-4' placeholder='Ask Ray...' />
+                <input className='w-full h-full pl-4 text-sm font-normal text-white bg-transparent' placeholder='Ask Ray...' />
               </div>
               <h5 className='text-xs font-medium opacity-50 text-gray-50'>CMD+K</h5>
             </div>
           </div>
-          <div className='flex items-center space-x-10 pl-5 font-medium text-sm '>
+          <div className='flex items-center pl-5 space-x-10 text-sm font-medium '>
             <Link href='/'>
               Logs
             </Link>
@@ -71,8 +69,8 @@ function Header() {
               Policies
             </Link>
 
-            <div className='flex items-center space-x-2 pr-4'>
-              <div className='w-9 h-9 bg-black rounded-full'></div>
+            <div className='flex items-center pr-4 space-x-2'>
+              <div className='bg-black rounded-full w-9 h-9'></div>
               <ChevronDown />
             </div>
 
